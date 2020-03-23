@@ -23,7 +23,6 @@
 
 	manager.on('pinch', function(ev) {
 		if (!model) return
-		console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAVBBBBBBBBBBBBBBBBBBBBBBBB')
 
 		const curr = model.getAttribute('scale')
 		const scale = (ev.scale - 1)*0.01
@@ -39,7 +38,6 @@
 	let firstX = null;
 	const movingTouch = event => {
 		if (!model) return
-		console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
 
 		const curr = model.getAttribute('rotation')
 		let touches = event.changedTouches
@@ -53,7 +51,6 @@
 			}
 			console.log(touch.pageY, firstY)
 			if (touch.pageY < firstY) {
-				console.log('PREMIKAM SE DOL')
 				if (touch.pageX < firstX) {
 					model.setAttribute('rotation', {
 						'x': curr.x - touch.pageY*0.01,
