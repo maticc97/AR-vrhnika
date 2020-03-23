@@ -35,14 +35,14 @@
 		})
 	})
 
+	let firstY = null;
+	let firstX = null;
 	const movingTouch = event => {
 		if (!model) return
 		console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
 
 		const curr = model.getAttribute('rotation')
 		let touches = event.changedTouches
-		let firstY = null;
-		let firstX = null;
 
 		for (touch of touches) {
 			if (!firstY) {
@@ -51,7 +51,7 @@
 			if (!firstX) {
 				firstX = touch.pageX;
 			}
-			
+			console.log(touch.pageY, firstY)
 			if (touch.pageY < firstY) {
 				console.log('PREMIKAM SE DOL')
 			}
