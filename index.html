@@ -13,7 +13,7 @@
         </a-scene>
     </body>
     <script>
-	/* const scene = document.getElementById('scene')
+	const scene = document.getElementById('scene')
 	scene.addEventListener('touchmove', event => {movingTouch(event)})
 	const model = document.getElementById('model')
 
@@ -44,16 +44,16 @@
 
 		for (touch of touches) {
 			console.log('Touch', touch)
-			console.log('pageY', touch.pageY)
-			console.log('pageX', touch.pageX)
+			console.log('pageY', curr.x, touch.pageY)
+			console.log('pageX', curr.y, touch.pageX)
 			model.setAttribute('rotation', {
 				'x': curr.x - touch.pageY*0.01,
 				'y': curr.y + touch.pageX*0.01,
 				'z': curr.z
 			})
 		}
-	} */
-	    AFRAME.registerComponent("foo",{
+	}
+	/*    AFRAME.registerComponent("foo",{
 		    init:function() {
 		      var element = document.querySelector('body');
 		      this.marker = document.querySelector('a-marker');
@@ -88,6 +88,6 @@
 			model.setAttribute("scale", scale);
 		    });
 		  }
-		});
+		});*/
 </script>
 </html>
