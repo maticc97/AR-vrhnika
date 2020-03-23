@@ -51,11 +51,11 @@
 			if (!firstX) {
 				firstX = touch.pageX;
 			}
-			console.log(firstY, touch.firstY);
-			if (touch.firstY < firstY) {
+			
+			if (touch.pageY < firstY) {
 				console.log('PREMIKAM SE DOL')
 			}
-			if (touch.firstX < firstX) {
+			if (touch.pageX < firstX) {
 				console.log('PREMIKAM SE LEVO')
 			}
 			model.setAttribute('rotation', {
