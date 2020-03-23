@@ -55,28 +55,28 @@
 				console.log(firstY-touch.pageY)
 				if (touch.pageX < firstX) {
 						model.setAttribute('rotation', {
-							'x': curr.x - touch.pageX*(firstX-touch.pageX),
-							'y': curr.y - touch.pageY*(firstY-touch.pageY),
+							'x': curr.x - touch.pageX*(firstX-touch.pageX)*0.001,
+							'y': curr.y - touch.pageY*(firstY-touch.pageY)*0.001,
 							'z': curr.z
 						})
 				} else {
 						model.setAttribute('rotation', {
-							'x': curr.x - touch.pageX*(touch.pageX-firstX),
-							'y': curr.y - touch.pageY*(firstY-touch.pageY),
+							'x': curr.x - touch.pageX*(touch.pageX-firstX)*0.001,
+							'y': curr.y - touch.pageY*(firstY-touch.pageY)*0.001,
 							'z': curr.z
 						})
 				}
 			} else {
 				if (touch.pageX < firstX) {
 						model.setAttribute('rotation', {
-							'x': curr.x - touch.pageX*(firstX-touch.pageX),
-							'y': curr.y - touch.pageY*(touch.pageY-firstY),
+							'x': curr.x - touch.pageX*(firstX-touch.pageX)*0.001,
+							'y': curr.y - touch.pageY*(touch.pageY-firstY)*0.001,
 							'z': curr.z
 						})
 				} else {
 						model.setAttribute('rotation', {
-							'x': curr.x - touch.pageX*(touch.pageX-firstX),
-							'y': curr.y - touch.pageY*(touch.pageY-firstY),
+							'x': curr.x - touch.pageX*(touch.pageX-firstX)*0.001,
+							'y': curr.y - touch.pageY*(touch.pageY-firstY)*0.001,
 							'z': curr.z
 						})
 				}
