@@ -54,15 +54,34 @@
 			console.log(touch.pageY, firstY)
 			if (touch.pageY < firstY) {
 				console.log('PREMIKAM SE DOL')
+				if (touch.pageX < firstX) {
+					model.setAttribute('rotation', {
+						'x': curr.x - touch.pageY*0.01,
+						'y': curr.y - touch.pageX*0.01,
+						'z': curr.z
+					})
+				} else {
+					model.setAttribute('rotation', {
+						'x': curr.x - touch.pageY*0.01,
+						'y': curr.y + touch.pageX*0.01,
+						'z': curr.z
+					})
+				}
+			} else {
+				if (touch.pageX < firstX) {
+					model.setAttribute('rotation', {
+						'x': curr.x + touch.pageY*0.01,
+						'y': curr.y - touch.pageX*0.01,
+						'z': curr.z
+					})
+				} else {
+					model.setAttribute('rotation', {
+						'x': curr.x + touch.pageY*0.01,
+						'y': curr.y + touch.pageX*0.01,
+						'z': curr.z
+					})
+				}
 			}
-			if (touch.pageX < firstX) {
-				console.log('PREMIKAM SE LEVO')
-			}
-			model.setAttribute('rotation', {
-				'x': curr.x - touch.pageY*0.01,
-				'y': curr.y + touch.pageX*0.01,
-				'z': curr.z
-			})
 		}
 	}
 	/*    AFRAME.registerComponent("foo",{
