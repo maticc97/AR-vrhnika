@@ -41,11 +41,22 @@
 
 		const curr = model.getAttribute('rotation')
 		let touches = event.changedTouches
+		let firstY = null;
+		let firstX = null;
 
 		for (touch of touches) {
-			console.log('Touch', touch)
-			console.log('pageY', curr.x, touch.pageY)
-			console.log('pageX', curr.y, touch.pageX)
+			if (!firstY) {
+				firstY = touch.pageY;
+			}
+			if (!firstX) {
+				firstX = touch.pageX;
+			}
+			if (touch.firstY < firstY) {
+				console.log('PREMIKAM SE DOL')
+			}
+			if (touch.firstX < firstX) {
+				console.log('PREMIKAM SE LEVO')
+			}
 			model.setAttribute('rotation', {
 				'x': curr.x - touch.pageY*0.01,
 				'y': curr.y + touch.pageX*0.01,
