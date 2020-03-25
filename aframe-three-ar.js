@@ -1,3 +1,5 @@
+import AFRAME from 'aframe';
+
 AFRAME.registerComponent('three-ar', {
     schema: {
         takeOverCamera: { default: true }
