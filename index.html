@@ -107,8 +107,8 @@
 	
 	</script>
 </html-->
-
-<!DOCTYPE html>
+<!-------------------------------------------------------->
+<!--!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -122,7 +122,7 @@
   <body>
     <a-scene three-ar vr-mode-ui="enabled:false">
       <!-- get more furniture here https://furniture.3d.io/#furnitureId=5b130c33-e3a8-4504-92e6-0b139fa96089 -->
-      <a-entity io3d-furniture="id:5b130c33-e3a8-4504-92e6-0b139fa96089" position="0 -1.3 -2"></a-entity>
+      <!--a-entity io3d-furniture="id:5b130c33-e3a8-4504-92e6-0b139fa96089" position="0 -1.3 -2"></a-entity>
       <a-sphere radius="0.1" color="orange" position="0 1 -2"></a-sphere>
 	<a-entity camera></a-entity>
     </a-scene>
@@ -147,4 +147,24 @@
       } */
     </script>
   </body>
-</html>
+</html-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/kripken/ammo.js/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/builds/ammo.js"></script>
+  <script src="https://cdn.rawgit.com/takahirox/aframe-outline/v1.1.1/build/aframe-outline.min.js"></script>
+  <script src="https://cdn.rawgit.com/takahirox/a-mmd/v1.0.3/build/a-mmd.min.js"></script>
+</head>
+
+<body>
+  <a-scene antialias="true" outline>
+    <a-entity position="0 10 20">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <a-sphere radius="0.1" color="orange" position="0 1 -2"></a-sphere>
+  </a-scene>
+</body>
+</html>	
