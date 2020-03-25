@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!--!DOCTYPE html>
 <html>
 	<head>	
 	    	<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-	    	<!-- we import arjs version without NFT but with marker + location based support -->
+	    	
 	    	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 	</head>	    
 	<body style="margin : 0px; overflow: hidden;">
@@ -18,65 +18,24 @@
     	<script>
 	
 	</script>
-</html>
+</html-->
 <!-------------------------------------------------------->
-<!--!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Hello, World! • A-Frame three.ar.js</title>
     <meta name="description" content="Hello, World! • A-Frame three.ar.js">
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js></script>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
     <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
     <script src="./aframe-three-ar.js"></script>
-    <script src="https://3d.io/releases/3dio-js/1.0.x-beta/3dio.min.js"></script>
   </head>
   <body>
     <a-scene three-ar vr-mode-ui="enabled:false">
-      <!-- get more furniture here https://furniture.3d.io/#furnitureId=5b130c33-e3a8-4504-92e6-0b139fa96089 -->
-      <!--a-entity io3d-furniture="id:5b130c33-e3a8-4504-92e6-0b139fa96089" position="0 -1.3 -2"></a-entity>
-      <a-sphere radius="0.1" color="orange" position="0 1 -2"></a-sphere>
-	<a-entity camera></a-entity>
+      <a-box scale="0.25 0.25 0.25" position="-0.25 0.125 -0.75" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+      <a-sphere scale="0.25 0.25 0.25" position="0 0.3125 -1.25" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+      <a-cylinder scale="0.25 0.25 0.25" position="0.25 0.1875 -0.75" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+      <a-plane scale="0.25 0.25 0.25" position="0 0 -1" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
     </a-scene>
-    <script>
-      /* let furnitureEl = document.querySelector('a-entity[io3d-furniture]')
-      let furniture = furnitureEl.getAttribute('io3d-furniture')
-      let alternatives
-      let counter = 0
-      // get alternatives for given furniture
-      io3d.homeStaging.replaceFurniture(furniture.id, {position: furnitureEl.getAttribute('position')})
-      .then(result => {
-        alternatives = result
-      })
-      function swapFurniture() {
-        if (alternatives.length === 0) return
-        // set new id
-        furnitureEl.setAttribute('io3d-furniture', {id: alternatives[counter].furniture.id})
-        // set new position to center it again based on the dinemsions
-        furnitureEl.setAttribute('position', AFRAME.utils.coordinates.stringify(alternatives[counter].position))
-        counter ++
-        if (counter >= alternatives.length) counter = 0
-      } */
-    </script>
   </body>
 </html>
-
-<!--!DOCTYPE html>
-<html>
-<head>
-  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/kripken/ammo.js/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/builds/ammo.js"></script>
-  <script src="https://cdn.rawgit.com/takahirox/aframe-outline/v1.1.1/build/aframe-outline.min.js"></script>
-  <script src="https://cdn.rawgit.com/takahirox/a-mmd/v1.0.3/build/a-mmd.min.js"></script>
-</head>
-
-<body>
-  <a-scene antialias="true" outline>
-    <a-entity position="0 10 20">
-      <a-camera></a-camera>
-    </a-entity>
-
-    <a-sphere radius="0.1" color="orange" position="0 1 -2"></a-sphere>
-  </a-scene>
-</body>
-</html-->	
