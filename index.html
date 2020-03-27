@@ -1,114 +1,57 @@
-<!--!DOCTYPE html>
-<html>
-	<head>	
-	    	<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-	    	
-	    	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/three.ar.js@latest/dist/three.ar.js"></script>
-		<!-- or the minified version -->
-		<!--script src="https://cdn.jsdelivr.net/npm/three.ar.js@latest/dist/three.ar.min.js"></script>
-	</head>	    
-	<body style="margin : 0px; overflow: hidden;">
-		<a-scene embedded arjs="trackingMethod: tango">
-		<!--a-marker preset="hiro">
-		    <a-box id="model" scale="2 2 2" position="0 0.5 0" material="color: yellow;"></a-box>
-		</a-marker-->
-			<!--a-anchor hit-testing-enabled="true">
-				<a-box position="0 0.5 0" material="color: yellow;"></a-box>
-			</a-anchor>
-			<a-camera/>
-		</a-scene>
-	</body>
-    	<script>
-	
-	</script>
-</html-->
-<!-------------------------------------------------------->
-<!--!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello, World! • A-Frame three.ar.js</title>
-    <meta name="description" content="Hello, World! • A-Frame three.ar.js">
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
-    <script src="./aframe-three-ar.js"></script>
-  </head>
-  <body>
-    <a-scene three-ar vr-mode-ui="enabled:false">
-      <a-box scale="0.25 0.25 0.25" position="-0.25 0.125 -0.75" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
-      <a-sphere scale="0.25 0.25 0.25" position="0 0.3125 -1.25" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-      <a-cylinder scale="0.25 0.25 0.25" position="0.25 0.1875 -0.75" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane scale="0.25 0.25 0.25" position="0 0 -1" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-    </a-scene>
-  </body>
-</html-->
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello, World! • A-Frame three.ar.js</title>
-    <meta name="description" content="Hello, World! • A-Frame three.ar.js">
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <script src="https://github.com/google-ar/three.ar.js"></script>
-    <script src="./aframe-three-ar.js"></script>
-    <script src="https://3d.io/releases/3dio-js/1.0.x-beta/3dio.min.js"></script>
-  </head>
-  <body onclick="swapFurniture()">
-    <a-scene three-ar vr-mode-ui="enabled:false">
-      <!-- get more furniture here https://furniture.3d.io/#furnitureId=5b130c33-e3a8-4504-92e6-0b139fa96089 -->
-      <a-entity io3d-furniture="id:5b130c33-e3a8-4504-92e6-0b139fa96089" position="0 -1.3 -2"></a-entity>
-      <a-sphere radius="0.1" color="orange" position="0 1 -2"></a-sphere>
-    </a-scene>
-    <script>
-      let furnitureEl = document.querySelector('a-entity[io3d-furniture]')
-      let furniture = furnitureEl.getAttribute('io3d-furniture')
-      let alternatives
-      let counter = 0
-      // get alternatives for given furniture
-      io3d.staging.replaceFurniture(furniture.id, {position: furnitureEl.getAttribute('position')})
-      .then(result => {
-        alternatives = result
-      })
-      function swapFurniture() {
-        if (alternatives.length === 0) return
-        // set new id
-        furnitureEl.setAttribute('io3d-furniture', {id: alternatives[counter].furniture.id})
-        // set new position to center it again based on the dinemsions
-        furnitureEl.setAttribute('position', AFRAME.utils.coordinates.stringify(alternatives[counter].position))
-        counter ++
-        if (counter >= alternatives.length) counter = 0
-      }
-    </script>
-  </body>
-</html>
+	<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-<!--!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  </head>
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
 
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
+<body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    <a-nft
+      type="nft"
+      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
     >
-      <a-text
-        value="This content will always face you."
-        scale="120 120 120"
-        gps-entity-place="latitude: 46.296103; longitude: 14.430653;"
-      ></a-text>
-      <a-box id="model" scale="2 2 2" gps-entity-place="latitude: 46.295949; longitude: 14.430733;" material="color: yellow;"></a-box>
-      <a-camera gps-camera rotation-reader> </a-camera>
-    </a-scene>
-  </body>
-</html-->
+      <a-entity
+        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+        scale="5 5 5"
+        position="50 150 0"
+      >
+      </a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
