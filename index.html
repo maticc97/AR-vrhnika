@@ -67,7 +67,7 @@
       let alternatives
       let counter = 0
       // get alternatives for given furniture
-      io3d.homeStaging.replaceFurniture(furniture.id, {position: furnitureEl.getAttribute('position')})
+      io3d.staging.replaceFurniture(furniture.id, {position: furnitureEl.getAttribute('position')})
       .then(result => {
         alternatives = result
       })
