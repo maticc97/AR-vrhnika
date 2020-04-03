@@ -36,6 +36,12 @@
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
+  
+  #overlay div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
 </style>	
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
@@ -43,7 +49,7 @@
     <div>Loading, please wait...</div>
   </div>
   <div id="overlay">
-	SOME ADITIONAL INFO	
+	  <div>SOME ADITIONAL INFO</div>	
   </div>
   <div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;'>
       <button id="info">
