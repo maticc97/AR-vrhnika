@@ -36,16 +36,7 @@
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
-</style>
-	
-<script>
-	document.getElementById("info").addEventListener("click", (e)=> {
-	  	document.getElementById("overlay").style.display = "block";
-	})
-	document.getElementById("play").addEventListener("click", (e)=> {
-		console.log('PLAY ANIMATION')
-	})
-</script>	
+</style>	
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
@@ -84,5 +75,14 @@
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
+	
+  <script>
+	document.getElementById("info").addEventListener("click", (e)=> {
+	  	document.getElementById("overlay").style.display = "block";
+	})
+	document.getElementById("play").addEventListener("click", (e)=> {
+		console.log('PLAY ANIMATION')
+	})
+  </script>
 </body>
 </html>
