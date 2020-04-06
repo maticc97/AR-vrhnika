@@ -51,14 +51,14 @@
   <div id="overlay">
 	  <div>SOME ADITIONAL INFO</div>	
   </div>
-  <div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;'>
-      <button id="info">
+  <!--div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;'-->
+      <button id="info" style="z-index: 1; position: absolute; left: 20%; bottom: 5%;">
           INFO
       </button>
-      <button id="play">
+      <button id="play" style="z-index: 1; position: absolute; right: 20%; bottom: 5%;">
           PLAY
       </button>
-  </div>
+  <!--/div-->
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
