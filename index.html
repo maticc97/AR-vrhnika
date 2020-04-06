@@ -42,6 +42,15 @@
     font-size: 1.25em;
     color: white;
   }
+  #overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  #overlay a:hover, #overlay a:focus {
+    color: #f1f1f1;
+  }
 </style>	
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
@@ -49,10 +58,11 @@
     <div>Loading, please wait...</div>
   </div>
   <div id="overlay">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <div>SOME ADITIONAL INFO</div>	
   </div>
   <!--div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;'-->
-      <button id="info" style="z-index: 1; position: absolute; left: 5%; bottom: 5%;">
+      <button id="info" style="z-index: 1; position: absolute; left: 5%; bottom: 5%;" onclick="openNav()">
           INFO
       </button>
       <button id="play" style="z-index: 1; position: absolute; right: 5%; bottom: 5%;">
@@ -85,9 +95,12 @@
   </a-scene>
 	
   <script>
-	document.getElementById("info").addEventListener("click", (e)=> {
-	  	document.getElementById("overlay").style.display = "block";
-	})
+	function openNav() {
+		document.getElementById("overlay").style.display = "block";
+	}
+	function closeNav() {
+  		document.getElementById("overlay").style.display = "none";
+	}
 	document.getElementById("play").addEventListener("click", (e)=> {
 		console.log('PLAY ANIMATION')
 	})
