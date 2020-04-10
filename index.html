@@ -91,7 +91,7 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-  <div class="overlay">
+  <div class="overlay" id="overlay">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <div style="margin: 10%">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -106,7 +106,7 @@
   <button class="infoButton" id="info" onclick="openNav()">
       <i class="fa fa-info" style="font-size: 30px; color: white;"></i>
   </button>
-  <button class="playButton" id="play">
+  <button class="playButton" id="play" onclick="startAnimation()">
       <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
   </button>
   <a-scene
@@ -141,9 +141,9 @@
 	function closeNav() {
   		document.getElementById("overlay").style.display = "none";
 	}
-	document.getElementById("play").addEventListener("click", (e)=> {
+	function startAnimation() {
 		console.log('PLAY ANIMATION')
-	})
+	}
   </script>
 </body>
 </html>
