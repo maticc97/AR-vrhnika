@@ -1,0 +1,82 @@
+.arjs-loader {
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+}
+	
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    overflow-y: scroll;
+}
+  
+.overlay div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    font-size: 60px;
+}
+	
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+	
+.overlay a:hover, #overlay a:focus {
+    color: #f1f1f1;
+}
+	
+.infoButton {
+    z-index: 1;
+	position: absolute;
+	left: 5%;
+	bottom: 5%;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	background-color: #1aa3ff;
+	border: 5px solid white;
+}
+
+.playButton {
+    z-index: 1;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #1aa3ff;
+    border: 5px solid white;
+}
