@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
   .arjs-loader {
@@ -23,7 +24,7 @@
     color: white;
   }
 	
-  #overlay {
+  .overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -37,19 +38,19 @@
     overflow-y: scroll;
   }
   
-  #overlay div {
+  .overlay div {
     text-align: center;
     font-size: 1.25em;
     color: white;
   }
-  #overlay .closebtn {
+  .overlay .closebtn {
     position: absolute;
     top: 20px;
     right: 5px;
     font-size: 60px;
   }
 	
-  #overlay a {
+  .overlay a {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
@@ -58,8 +59,25 @@
     transition: 0.3s;
   }
 		
-  #overlay a:hover, #overlay a:focus {
+  .overlay a:hover, #overlay a:focus {
     color: #f1f1f1;
+  }
+	
+  .infoButton {
+    	z-index: 1;
+	position: absolute;
+	left: 5%;
+	bottom: 5%;
+	padding: 20px;
+	border-radius: 50%;
+  }
+  .playButton {
+    z-index: 1;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    padding: 20px;
+    border-radius: 50%;
   }
 </style>	
 <body style="margin : 0px; overflow: hidden;">
@@ -67,7 +85,7 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-  <div id="overlay">
+  <div class="overlay">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <div style="margin: 10%">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -80,11 +98,11 @@
 	  </div>
   </div>
   <!--div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;'-->
-      <button id="info" style="z-index: 1; position: absolute; left: 5%; bottom: 5%;" onclick="openNav()">
-          INFO
+      <button class="infoButton" id="info" onclick="openNav()">
+          <i class="fa fa-info"></i>
       </button>
-      <button id="play" style="z-index: 1; position: absolute; right: 5%; bottom: 5%;">
-          PLAY
+      <button class="playButton" id="play">
+	      <i class="fa fa-play"></i>
       </button>
   <!--/div-->
   <a-scene
