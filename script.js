@@ -1,38 +1,11 @@
-window.onload = () => {
-     let places = staticLoadPlaces();
-     renderPlaces(places);
-};
-
-function staticLoadPlaces() {
-    return [
-        {
-            name: 'Magnemite',
-            location: {
-                lat: 46.0453,
-                lng: 14.4892,
-            }
-        },
-    ];
+function openNav() {
+	document.getElementById("overlay").style.display = "block";
 }
 
-function renderPlaces(places) {
-    let scene = document.querySelector('a-scene');
+function closeNav() {
+  	document.getElementById("overlay").style.display = "none";
+}
 
-    places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
-
-        let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        model.setAttribute('gltf-model', './magnemite/scene.gltf');
-        model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('animation-mixer', '');
-        model.setAttribute('scale', '0.5 0.5 0.5');
-
-        model.addEventListener('loaded', () => {
-            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-        });
-
-        scene.appendChild(model);
-    });
+function startAnimation() {
+	console.log('PLAY ANIMATION')
 }
