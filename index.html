@@ -31,12 +31,12 @@
   <button class="playButton" id="play" onclick="startAnimation()">
       <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
   </button>
-  <a-scene
+  <!--a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
+  -->
     <!-- we use cors proxy to avoid cross-origin problems -->
     <!--a-nft
       type="nft"
@@ -53,7 +53,8 @@
 	</a-entity>
 	    <a-box position='0 0.5 0' color="yellow" scale="50 50 50"></a-box>
     </a-nft-->
-	  <a-marker preset="hiro">
+  <a-scene embedded arjs>
+	<a-marker preset="hiro">
 		<a-entity 
 			collada-model="url(./assets/media/kolo.dae)"
 			position="0 0.5 0"
