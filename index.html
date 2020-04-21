@@ -1,10 +1,28 @@
+<!-- USE THIS ONE IN CASE OF MARKER/LOCATION -->
 <!DOCTYPE html>
 <html>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity
+            position="0 -1 0"
+            scale="0.05 0.05 0.05"
+            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+            ></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
+
+<!-- USE THIS ONE IN CASE OF NFT --> 
+<!--!DOCTYPE html>
+<html>
 	<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-	<!-- USE THIS ONE IN CASE OF NFT --> 
-	<!--script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script-->
-	<!-- USE THIS ONE IN CASE OF MARKER/LOCATION -->
-	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	 
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 	<script src="./script.js"></script>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,9 +31,9 @@
   
 </style>	
 <body style="margin : 0px; overflow: hidden;">
-  <!--div class="arjs-loader">
+  <div class="arjs-loader">
     <div>Loading, please wait...</div>
-  </div-->
+  </div>
   <div class="overlay" id="overlay">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <div style="margin: 10%">
@@ -24,8 +42,6 @@
 		  	<source src="./assets/media/randomVideo1.mp4" type="video/mp4">
 		  	Your browser does not support HTML5 video.
 	  	</video>
-		<!--img src="http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/back02.jpg" alt="Trulli" width="100%">
-		<img src="http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/back05.jpg" alt="Trulli" width="100%"-->  
 	  </div>
   </div>
   <button class="infoButton" id="info" onclick="openNav()">
@@ -34,14 +50,13 @@
   <button class="playButton" id="play" onclick="startAnimation()">
       <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
   </button>
-  <!--a-scene
+  <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  -->
-    <!-- we use cors proxy to avoid cross-origin problems -->
-    <!--a-nft
+  >
+    <a-nft
       type="nft"
       url="./assets/imageTrack/imageTrack"
       smooth="true"
@@ -55,16 +70,7 @@
 		scale="50 50 50"
 	</a-entity>
 	    <a-box position='0 0.5 0' color="yellow" scale="50 50 50"></a-box>
-    </a-nft-->
-  <a-scene embedded arjs>
-	<a-marker preset="hiro">
-		<!--a-entity 
-			collada-model="url(./assets/media/kolo.dae)"
-			position="0 0.5 0"
-			scale="50 50 50"
-		</a-entity-->
-		<a-box position='0 0.5 0' color="yellow" scale="50 50 50"></a-box>
-	</a-marker>	  
+    </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
 	
@@ -72,4 +78,4 @@
 	
   </script>
 </body>
-</html>
+</html-->
