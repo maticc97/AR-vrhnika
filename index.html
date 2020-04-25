@@ -69,7 +69,9 @@
 	    rotation="90 0 0"
             scale="500 500 500"
             gltf-model="./assets/model/kolo.glb"
-            ></a-entity>
+            >
+	    <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite">
+          </a-animation></a-entity>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
