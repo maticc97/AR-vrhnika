@@ -5,12 +5,9 @@
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
         <a-marker preset="hiro">
-	    <a-entity
-            position="0 -1 0"
-            scale="5 5 5"
-            gltf-model="./assets/model/kolo.glb"
+	    <a-box
             ><a-animation attribute="rotation" dur="10000" to="360 360 360" easing="linear" repeat="indefinite"></a-animation>
-        </a-entity></a-entity>
+        </a-box></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
