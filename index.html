@@ -99,6 +99,7 @@
         //document.addEventListener('touchend',test,false);
        // document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
          document.addEventListener('touchmove', function(e){
+             alert('yes')
            e.preventDefault();
              var temp_x = event.clientX-this.x_cord;
           var temp_y = event.clientY-this.y_cord;
