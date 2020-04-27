@@ -100,6 +100,7 @@
         document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
       },
       OnDocumentMouseDown : function(event){
+	      alert('touched');
         this.ifMouseDown = true;
         this.x_cord = event.clientX;
         this.y_cord = event.clientY;
