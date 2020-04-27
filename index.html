@@ -111,17 +111,11 @@
         {
           var temp_x = event.touches[0].pageX-this.x_cord;
           var temp_y = event.touches[0].pageY-this.y_cord;
-            alert(temp_x,temp_y);
-          if(Math.abs(temp_y)<Math.abs(temp_x))
-          {
-            this.el.object3D.rotateY(100);
-          }
-          else
-          {
-            this.el.object3D.rotateX(temp_y*this.data.speed/10);
-          }
-          this.x_cord = event.touches[0].pageX;
-          this.y_cord = event.touches[0].pageY;
+       
+            alert(this.data.speed);
+            this.el.object3D.rotateY(0.003);
+             this.x_cord = event.touches[0].pageX;
+            this.y_cord = event.touches[0].pageY;
         }
     }, false)
       },
@@ -141,14 +135,12 @@
         {
           var temp_x = event.clientX-this.x_cord;
           var temp_y = event.clientY-this.y_cord;
-          if(Math.abs(temp_y)<Math.abs(temp_x))
-          {
-            this.el.object3D.rotateY(temp_x*this.data.speed/1000);
-          }
-          else
-          {
-            this.el.object3D.rotateX(temp_y*this.data.speed/1000);
-          }
+          
+            this.el.object3D.rotateY(0.003);
+            alert(this.data.speed);
+         
+            this.el.object3D.rotateX(0.003);
+         
           this.x_cord = event.clientX;
           this.y_cord = event.clientY;
         }
