@@ -95,9 +95,9 @@
         this.ifMouseDown = false;
         this.x_cord = 0;
         this.y_cord = 0;
-        document.addEventListener('touch',this.OnDocumentMouseDown.bind(this));
-        document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this));
-        document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
+        document.addEventListener('ontouchstart',this.OnDocumentMouseDown.bind(this));
+        document.addEventListener('ontouchend',this.OnDocumentMouseUp.bind(this));
+        document.addEventListener('ontouchmove',this.OnDocumentMouseMove.bind(this));
       },
       OnDocumentMouseDown : function(event){
 	      alert('touched');
