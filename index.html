@@ -97,24 +97,31 @@
         this.y_cord = 0;
        // document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
         //document.addEventListener('touchend',test,false);
-       // document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
+        document.addEventListener('touchstart',function(e){
+          alert('touched');
+          e.preventDefault();
+          this.ifMouseDown = true;
+          this.x_cord = event.touches[0].pageX;
+          this.y_cord = event.touches[0].pageY;
+        },false);
+
          document.addEventListener('touchmove', function(e){
-             
-            this.x_cord = event.touches[0].pageX;
-            this.y_cord = event.touches[0].pageY;
-             var temp_x = event.clientX-this.x_cord;
-             alert(this.x_cord);
-          var temp_y = event.clientY-this.y_cord;
+           e.preventDefault();
+          if(this.ifMouseDown)
+        {
+          var temp_x = event.touches[0].pageX-this.x_cord;
+          var temp_y = event.touches[0].pageY-this.y_cord;
           if(Math.abs(temp_y)<Math.abs(temp_x))
           {
-            this.el.object3D.rotateY(90);
+            this.el.object3D.rotateY(temp_x*this.data.speed/1000);
           }
           else
           {
-            this.el.object3D.rotateX(90);
+            this.el.object3D.rotateX(temp_y*this.data.speed/1000);
           }
-          this.x_cord = event.clientX;
-          this.y_cord = event.clientY; // alert pageX coordinate of touch point
+          this.x_cord = event.touches[0].pageX;
+          this.y_cord = event.touches[0].pageY;
+        }
     }, false)
       },
       OnDocumentMouseDown : function(event){
