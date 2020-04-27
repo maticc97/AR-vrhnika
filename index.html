@@ -98,7 +98,7 @@
        // document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
         //document.addEventListener('touchend',test,false);
         document.addEventListener('touchstart',function(e){
-          alert('touched');
+        
           e.preventDefault();
           this.ifMouseDown = true;
           this.x_cord = event.touches[0].pageX;
