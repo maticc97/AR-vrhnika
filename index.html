@@ -101,6 +101,7 @@
          document.addEventListener('touchmove', function(e){
            e.preventDefault();
              var temp_x = event.clientX-this.x_cord;
+             alert(temp_x);
           var temp_y = event.clientY-this.y_cord;
           if(Math.abs(temp_y)<Math.abs(temp_x))
           {
