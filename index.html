@@ -98,6 +98,9 @@
         document.addEventListener('ontouchstart',this.OnDocumentMouseDown.bind(this));
         document.addEventListener('ontouchend',this.OnDocumentMouseUp.bind(this));
         document.addEventListener('ontouchmove',this.OnDocumentMouseMove.bind(this));
+	       document.body.addEventListener('touchstart', function(e){
+        alert('aaaaa'); // alert pageX coordinate of touch point
+    }, false)
       },
       OnDocumentMouseDown : function(event){
 	      alert('touched');
