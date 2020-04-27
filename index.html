@@ -111,10 +111,10 @@
         {
           var temp_x = event.touches[0].pageX-this.x_cord;
           var temp_y = event.touches[0].pageY-this.y_cord;
-            alert(temp_x, temp_y, this.data.speed);
+            alert(temp_x,temp_y);
           if(Math.abs(temp_y)<Math.abs(temp_x))
           {
-            this.el.object3D.rotateY(temp_x*this.data.speed/10);
+            this.el.object3D.rotateY(100);
           }
           else
           {
