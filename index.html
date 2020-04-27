@@ -95,10 +95,10 @@
         this.ifMouseDown = false;
         this.x_cord = 0;
         this.y_cord = 0;
-        document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
+       // document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
         document.addEventListener('touchend',test,false);
         document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
-	     /*  document.addEventListener('touchstart', function(e){
+	       document.addEventListener('touchstart', function(e){
         alert('aaaaa');*/ // alert pageX coordinate of touch point
     }, false)
       },
