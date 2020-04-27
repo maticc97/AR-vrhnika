@@ -97,10 +97,21 @@
         this.y_cord = 0;
        // document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
         //document.addEventListener('touchend',test,false);
-        //document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
-         document.addEventListener('touchmove', function(e){
+        document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
+         document.addEventListener('touchstart', function(e){
            e.preventDefault();
-        alert('aaaaa'); // alert pageX coordinate of touch point
+             var temp_x = event.clientX-this.x_cord;
+          var temp_y = event.clientY-this.y_cord;
+          if(Math.abs(temp_y)<Math.abs(temp_x))
+          {
+            this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+          }
+          else
+          {
+            this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+          }
+          this.x_cord = event.clientX;
+          this.y_cord = event.clientY; // alert pageX coordinate of touch point
     }, false)
       },
       OnDocumentMouseDown : function(event){
