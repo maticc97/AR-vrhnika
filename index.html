@@ -95,9 +95,9 @@
         this.ifMouseDown = false;
         this.x_cord = 0;
         this.y_cord = 0;
-       // document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
-        //document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this),false);
-        //document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
+        document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this));
+        document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this));
+        document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
       },
       OnDocumentMouseDown : function(event){
         this.ifMouseDown = true;
@@ -105,7 +105,7 @@
         this.y_cord = event.touches[0].pageY;
       },
       OnDocumentMouseUp : function(){
-	      event.preventDefault();
+	      
         this.ifMouseDown = false;
 	      
       },
@@ -113,7 +113,7 @@
       {
         if(this.ifMouseDown)
         {
-		event.preventDefault();
+		
           var temp_x = event.touches[0].pageX-this.x_cord;
           var temp_y = event.touches[0].pageY-this.y_cord;
           if(Math.abs(temp_y)<Math.abs(temp_x))
