@@ -119,11 +119,12 @@
           var temp_y = event.touches[0].pageY-this.y_cord;
           if(Math.abs(temp_y)<Math.abs(temp_x))
           {
-            this.el.object3D.rotateY(temp_x*this.data.speed/100000);
+            this.el.object3D.rotateY(temp_x*this.data.speed/10000);
+		  alert('pox');
           }
           else
           {
-            this.el.object3D.rotateX(temp_y*this.data.speed/100000);
+            this.el.object3D.rotateX(temp_y*this.data.speed/10000);
           }
           this.x_cord = event.touches[0].pageX;
           this.y_cord = event.touches[0].pageX;
