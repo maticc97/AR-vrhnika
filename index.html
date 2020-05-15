@@ -103,12 +103,19 @@
 	  	</video>
 	  </div>
     </div>
+	  
     <button class="infoButton" id="info" onclick="openNav()">
       <i class="fa fa-info" style="font-size: 30px; color: white;"></i>
     </button>
+	  
     <button class="playButton" id="play" onclick="startAnimation()">
       <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
     </button>
+	 
+	 <button class="Rotate1" id="rotate1" onclick="startAnimation()">
+      <i class="fa fa-repeat" style="font-size: 30px; color: white;"></i>
+    </button>
+	  
     <a-scene embedded arjs vr-mode-ui="enabled: false;">
       <a-asset>
         <a-asset-item id ="animated-asset" src="./assets/model/os_kolo.glb" response-type="arraybuffer"></a-asset-item>
