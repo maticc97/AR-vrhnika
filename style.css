@@ -79,7 +79,7 @@
     border: 5px solid white;
 }
 
-.Rotate1 {
+.RotateX {
     z-index: 1;
     position: absolute;
     right: 20%;
@@ -90,3 +90,29 @@
     background-color: #1aa3ff;
     border: 5px solid white;
 }
+
+.RotateY {
+    z-index: 1;
+    position: absolute;
+    right: 35%;
+    bottom: 5%;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #1aa3ff;
+    border: 5px solid white;
+}
+
+
+.RotateZ {
+    z-index: 1;
+    position: absolute;
+    right: 50%;
+    bottom: 5%;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #1aa3ff;
+    border: 5px solid white;
+}
+
