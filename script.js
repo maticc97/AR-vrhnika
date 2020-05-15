@@ -32,7 +32,7 @@ function rotate1(){
   THREE.Math.degToRad(30),
   THREE.Math.degToRad(90)
 );
-el.object3D.rotation.x += Math.PI;
+	this.el.object3D.rotation.x += Math.PI;
 	
 	console.log(a);
 	
