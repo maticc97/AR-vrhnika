@@ -1,106 +1,141 @@
-/**var buttonX = document.getElementById("rotateX");
-alert(buttonX);
-buttonX.addEventListener('touchstart',rotateX,false);
-*/
-function openNav() {
-  document.getElementById("overlay").style.display = "block";
-}
+<!-- USE THIS ONE IN CASE OF MARKER/LOCATION -->
+<!--!DOCTYPE html>
+<html>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene embedded arjs>
+        <a-marker preset="hiro">
+      <a-entity
+            position="0 -1 0"
+            scale="5 5 5"
+            gltf-model="./assets/model/kolo.glb"
+            ></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html-->
 
-function closeNav() {
-    document.getElementById("overlay").style.display = "none";
-}
+<!-- USE THIS ONE IN CASE OF NFT --> 
+<!--!DOCTYPE html>
+<html>
+  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+   
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  <script src="./script.js"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-function startAnimation() {
-  let model = document.getElementById("model");
-  let secModel = document.getElementById("secModel");
-  if (this.model) {
-    this.model.setAttribute('position', "100 0 0");
-    this.secModel.removeAttribute('position');
-    this.secModel.setAttribute('animation-mixer', {loop: "once"});
-    setTimeout(function(){
-      this.secModel.removeAttribute('animation-mixer');
-      this.secModel.setAttribute('position', "100 0 0");
-      this.model.removeAttribute('position');
-    }, 5000);
-  }
+<style>
   
-}
+</style>  
+<body style="margin : 0px; overflow: hidden;">
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <div class="overlay" id="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style="margin: 10%">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <video width="100%" controls>
+        <source src="./assets/media/randomVideo1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </div>
+  <button class="infoButton" id="info" onclick="openNav()">
+      <i class="fa fa-info" style="font-size: 30px; color: white;"></i>
+  </button>
+  <button class="playButton" id="play" onclick="startAnimation()">
+      <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
+  </button>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <a-nft
+      type="nft"
+      url="./assets/imageTrack/imageTrack"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+  <a-entity
+            position="0 -1 0"
+      rotation="90 0 0"
+            scale="500 500 500"
+            gltf-model="./assets/model/kolo.glb"
+            ></a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+  
+  <script>
+  
+  </script>
+</body>
+</html-->
 
-function rotateX(){
-      let model = document.getElementById("model");
-      let secModel = document.getElementById("secModel");
-      let a = this.model.getAttribute('rotation');
-      model.setAttribute('rotation', {x: a.x+5, y: a.y, z: a.z});
+<!--HIRO MARKER IMAGE https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg -->
+<!doctype HTML>
+<html>
+  <head>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="./inflate.min.js"></script>
+<script src="./script.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+ </head>
+  <body style='margin : 0px; overflow: hidden;'>
+    <div class="overlay" id="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style="margin: 10%">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <video width="100%" controls>
+        <source src="./assets/media/randomVideo1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    </div>
     
-}
-
-function rotateY(){
-    let model = document.getElementById("model");
-  let secModel = document.getElementById("secModel");
-  
-  let a = this.model.getAttribute('rotation');
-  model.setAttribute('rotation', {x: a.x, y: a.y+5, z: a.z});
-}
-
-function rotateZ(){
-    let model = document.getElementById("model");
-  let secModel = document.getElementById("secModel");
-  
-  let a = this.model.getAttribute('rotation');
-  model.setAttribute('rotation', {x: a.x, y: a.y, z: a.z+5});
-}
-
-AFRAME.registerComponent('drag-rotate-component',{
-      schema : { speed : {default:1}},
-      init : function(){
-        this.ifMouseDown = false;
-        this.x_cord = 0;
-        this.y_cord = 0;
-        document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this));
-        document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this));
-        document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
-      },
-      OnDocumentMouseDown : function(event){
-        this.ifMouseDown = true;
-        this.x_cord = event.touches[0].pageX;
-        this.y_cord = event.touches[0].pageY;
-      },
-      OnDocumentMouseUp : function(){
-        
-        this.ifMouseDown = false;
-        
-      },
-      OnDocumentMouseMove : function(event)
-      {
-        if(this.ifMouseDown)
-        {
+    <button class="infoButton" id="info" onclick="openNav()">
+      <i class="fa fa-info" style="font-size: 30px; color: white;"></i>
+    </button>
     
-          var temp_x = event.touches[0].pageX-this.x_cord;
-          var temp_y = event.touches[0].pageY-this.y_cord;
-          if(Math.abs(temp_y)<Math.abs(temp_x))
-          {
-            this.el.object3D.rotateY(temp_x*this.data.speed/100);
-      
-          }
-          else
-          {
-            this.el.object3D.rotateX(temp_y*this.data.speed/100);
-          }
-          this.x_cord = event.touches[0].pageX;
-          this.y_cord = event.touches[0].pageY;
-        }
-      }
-    });
+    <button class="playButton" id="play" onclick="startAnimation()">
+      <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
+    </button>
+   
+   <button id = "rotateX" class="RotateX" onclick="rotateX()">
+      <i class="fa fa-repeat" style="font-size: 30px; color: white;"></i>
+    </button>
 
+    <button id = "rotateY" class="RotateY" onclick="rotateY()">
+      <i class="fa fa-repeat" style="font-size: 30px; color: white;"></i>
+    </button>
 
-AFRAME.registerComponent('resize',{
-      schema : { speed : {default:1}},
-      init : function(){
-        document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this));
-      },
-      OnDocumentMouseDown : function(event){
-        let a = this.el.getAttribute('scale');
-        this.el.setAttribute('scale',{x: a.x*1.1 ,y: a.y*1.1 ,z: a.z*1.1});
-      }
-      
-    });
+    <button id = "rotateZ" class="RotateZ" onclick="rotateZ()">
+      <i class="fa fa-repeat" style="font-size: 30px; color: white;"></i>
+    </button>
+    
+    <a-scene embedded arjs vr-mode-ui="enabled: false;">
+      <a-asset>
+        <a-asset-item id ="animated-asset" src="./assets/model/os_kolo.glb" response-type="arraybuffer"></a-asset-item>
+  <a-asset-item id ="testAsset" src="./assets/model/animacija_krave_voz.glb" response-type="arraybuffer"></a-asset-item>
+      </a-asset>
+
+      <a-marker markerhandler emitevents="true" preset="hiro">
+        <a-gltf-model id="model" src="#animated-asset" drag-rotate-component position="0 0 0" scale="0.4 0.4 0.4"></a-gltf-model>
+  <a-gltf-model id="secModel" src="#testAsset" resize rotation="0 -90 90" scale="0.4 0.4 0.4" position="100 0 -50"></a-gltf-model>
+      </a-marker>
+    <a-entity camera look-controls="enabled:false"></a-entity>
+    </a-scene>
+  </body>
+</html>
+  
