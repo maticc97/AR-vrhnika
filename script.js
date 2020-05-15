@@ -27,6 +27,13 @@ function rotate1(){
 	let secModel = document.getElementById("secModel");
 	
 	let a = this.model.getAttribute('rotation');
+	el.object3D.rotation.set(
+  THREE.Math.degToRad(15),
+  THREE.Math.degToRad(30),
+  THREE.Math.degToRad(90)
+);
+el.object3D.rotation.x += Math.PI;
+	
 	console.log(a);
 	
 }
