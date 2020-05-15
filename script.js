@@ -22,6 +22,18 @@ function startAnimation() {
 	
 }
 
+function rotate1(){
+  	let model = document.getElementById("model");
+	let secModel = document.getElementById("secModel");
+	
+	this.model.rotation.set(
+	 THREE.Math.degToRad(15),
+	 THREE.Math.degToRad(30),
+	 THREE.Math.degToRad(90)
+);
+	this.model.object3D.rotation.x += Math.PI;
+}
+
 AFRAME.registerComponent('drag-rotate-component',{
       schema : { speed : {default:1}},
       init : function(){
