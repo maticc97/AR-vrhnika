@@ -26,6 +26,7 @@
 	<script src="./script.js"></script>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
   
 </style>	
@@ -110,12 +111,12 @@
     </button>
     <a-scene embedded arjs vr-mode-ui="enabled: false;">
       <a-asset>
-        <!--a-asset-item id ="animated-asset" src="./assets/model/os_kolo.glb" response-type="arraybuffer"></a-asset-item-->
+        <a-asset-item id ="animated-asset" src="./assets/model/os_kolo.glb" response-type="arraybuffer"></a-asset-item>
 	<a-asset-item id ="testAsset" src="./assets/model/animacija_krave_voz.glb" response-type="arraybuffer"></a-asset-item>
       </a-asset>
 
       <a-marker markerhandler emitevents="true" preset="hiro">
-        <!--a-gltf-model id="model" src="#animated-asset" drag-rotate-component position="0 0 0"></a-gltf-model-->
+        <a-gltf-model id="model" src="#animated-asset" drag-rotate-component position="0 0 0"></a-gltf-model>
 	<a-gltf-model id="secModel" src="#testAsset" drag-rotate-component position="100 0 0"></a-gltf-model>
       </a-marker>
     <a-entity camera look-controls="enabled:false"></a-entity>
