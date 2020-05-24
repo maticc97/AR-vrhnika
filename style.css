@@ -26,7 +26,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     overflow-y: scroll;
 }
@@ -41,6 +41,7 @@
     position: absolute;
     right: 5px;
     font-size: 60px;
+    margin: 5%;
 }
 	
 .overlay a {
@@ -79,40 +80,6 @@
     border: 5px solid white;
 }
 
-.RotateX {
-    z-index: 1;
-    position: absolute;
-    right: 20%;
-    bottom: 5%;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #1aa3ff;
-    border: 5px solid white;
+.infoText {
+   text-align: left;
 }
-
-.RotateY {
-    z-index: 1;
-    position: absolute;
-    right: 35%;
-    bottom: 5%;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #1aa3ff;
-    border: 5px solid white;
-}
-
-
-.RotateZ {
-    z-index: 1;
-    position: absolute;
-    right: 50%;
-    bottom: 5%;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #1aa3ff;
-    border: 5px solid white;
-}
-
