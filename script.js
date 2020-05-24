@@ -14,13 +14,14 @@ function startAnimation() {
   let model = document.getElementById("model");
   let secModel = document.getElementById("secModel");
   if (this.model) {
-    this.model.setAttribute('position', "100 0 0");
-    this.secModel.removeAttribute('position');
+    //
+    this.model.setAttribute('visible', "false");
+    this.secModel.setAttribute('visible',true);
     this.secModel.setAttribute('animation-mixer', {loop: "once"});
     setTimeout(function(){
       this.secModel.removeAttribute('animation-mixer');
-      this.secModel.setAttribute('position', "100 0 0");
-      this.model.removeAttribute('position');
+      this.secModel.setAttribute('visible',false);
+      this.model.setAttribute('visible',true);
     }, 5000);
   }
   
