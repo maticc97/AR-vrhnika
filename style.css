@@ -22,33 +22,16 @@ img{
     font-size: 1.25em;
     color: white;
 }
+	
     
 .overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    overflow-y: scroll;
-}
-  
-.overlay div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-}
-
-.overlay .closebtn {
-    position: absolute;
-    right: 5px;
+@@ -43,29 +49,33 @@
     font-size: 60px;
     margin: 5%;
 }
+	
     
 .overlay a {
     text-decoration: none;
@@ -57,13 +40,23 @@ img{
     display: block;
     transition: 0.3s;
 }
+	
     
 .overlay a:hover, #overlay a:focus {
     color: #f1f1f1;
 }
+	
     
 .infoButton {
     z-index: 1;
+	position: absolute;
+	left: 5%;
+	bottom: 5%;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	background-color: #1aa3ff;
+	border: 5px solid white;
     position: absolute;
     left: 5%;
     bottom: 5%;
@@ -79,17 +72,7 @@ img{
 }
 
 .playButton {
-    z-index: 1;
-    position: absolute;
-    right: 5%;
-    bottom: 5%;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #1aa3ff;
-    border: 5px solid white;
-}
-
+@@ -83,3 +93,67 @@
 .infoText {
    text-align: left;
 }
@@ -99,7 +82,7 @@ img{
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 3; /* Sit on top */
-  padding-top: 20px; /* Location of the box */
+  padding-top: 250px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -112,7 +95,7 @@ img{
 /* Modal Content */
 .modal-content {
   background-color: #ffffff91;
-  margin: 20px;
+  margin: auto;
   padding: 10px;
   border: 1px solid #888;
   width: 50%;
@@ -123,7 +106,7 @@ img{
   color: #aaaaaa;
   float: right;
   font-size: 50px;
-  
+
   font-weight: bold;
 }
 
