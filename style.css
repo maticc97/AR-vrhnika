@@ -10,28 +10,42 @@
     justify-content: center;
     align-items: center;
 }
-
 img{
     float:right;
     width: 100px;
     height: 100px;
 }
-
 .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
     color: white;
 }
-	
     
 .overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-@@ -43,29 +49,33 @@
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    overflow-y: scroll;
+}
+  
+.overlay div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+}
+.overlay .closebtn {
+    position: absolute;
+    right: 5px;
     font-size: 60px;
     margin: 5%;
 }
-	
     
 .overlay a {
     text-decoration: none;
@@ -40,23 +54,13 @@ img{
     display: block;
     transition: 0.3s;
 }
-	
     
 .overlay a:hover, #overlay a:focus {
     color: #f1f1f1;
 }
-	
     
 .infoButton {
     z-index: 1;
-	position: absolute;
-	left: 5%;
-	bottom: 5%;
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	background-color: #1aa3ff;
-	border: 5px solid white;
     position: absolute;
     left: 5%;
     bottom: 5%;
@@ -70,13 +74,20 @@ img{
     -ms-user-select: none;
     user-select: none;
 }
-
 .playButton {
-@@ -83,3 +93,67 @@
+    z-index: 1;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #1aa3ff;
+    border: 5px solid white;
+}
 .infoText {
    text-align: left;
 }
-
 /* The Modal (background) */
 .modal {
   display: block; /* Hidden by default */
@@ -91,44 +102,36 @@ img{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
 /* Modal Content */
 .modal-content {
   background-color: #ffffff91;
   margin: auto;
+  margin: 20px;
   padding: 10px;
   border: 1px solid #888;
   width: 50%;
 }
-
 /* The Close Button */
 .close {
   color: #aaaaaa;
   float: right;
   font-size: 50px;
-
+  
   font-weight: bold;
 }
-
-
-
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-
 }
-
 .closeInstr{
     width: 100px;
     height: 30px;
 }
-
 .backBtn {
     display: none;
 }
-
 .instructionsBtn {
     z-index: 1;
     left: 5%;
