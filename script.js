@@ -1,7 +1,62 @@
-/**var buttonX = document.getElementById("rotateX");
-alert(buttonX);
-buttonX.addEventListener('touchstart',rotateX,false);
-*/
+const Url = 'https://ar-muzej.herokuapp.com/';
+const instructions = ["Usmeri kamero v marker, za prikaz 3D modela. Model lahko obračate s prstom po zaslonu, če pa želite o modelu izvedeti več informacij pa pritisnite na znak i v levem spodnjem kotu."];
+var instructionsCount = 0;
+var instructionsText;
+
+function backBtnClicked() {
+  if (this.instructionsCount == 3) {
+    document.getElementById("forwardBtn").innerHTML = "Naprej";
+  }
+  if (this.instructionsCount > 0) {
+    document.getElementById("instructionsText").innerHTML = instructions[this.instructionsCount-1];
+    console.log(document.getElementById("instructionsText"));
+    this.instructionsCount -= 1;
+    if (this.instructionsCount == 0) {
+      document.getElementById("backBtn").style.display = "none";
+    }
+  }
+}
+
+function forwardBtnClicked() {
+  if (this.instructionsCount == 0) {
+    document.getElementById("backBtn").style.display="block";
+  }
+  if (this.instructionsCount == 3) {
+    this.closeInstructions();
+  }
+  if (this.instructionsCount < 3) {
+    document.getElementById("instructionsText").innerHTML = instructions[this.instructionsCount+1];
+    this.instructionsCount += 1;
+    if (this.instructionsCount == 3) {
+      document.getElementById("forwardBtn").innerHTML = "Zapri";
+    }
+  }
+}
+
+function openInstructions() {
+  this.instructionsCount = 0;
+  document.getElementById("forwardBtn").innerHTML = "Naprej";
+  document.getElementById("backBtn").style.display = "none";
+  document.getElementById("instructionsText").innerHTML = instructions[0];
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeInstructions() {
+  document.getElementById("myModal").style.display = "none";
+  this.instructionsCount = 0;
+}
+
+function openNav() {
+  var xmlhttp = new XMLHttpRequest();
+  const data = {
+    clicked: "Info",
+    date: new Date().toLocaleString()
+  }
+  xmlhttp.open("POST", Url);
+  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xmlhttp.send(JSON.stringify(data));
+  document.getElementById("overlay").style.display = "block";
+}
 function openNav() {
   document.getElementById("overlay").style.display = "block";
 }
