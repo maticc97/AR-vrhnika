@@ -14,6 +14,7 @@ img{
     float:right;
     width: 100px;
     height: 100px;
+    margin-bottom: 20px;
 }
 .arjs-loader div {
     text-align: center;
@@ -130,13 +131,13 @@ img{
 .modal-content {
   background-color: #ffffff91;
   margin: auto;
-  padding: 10px;
+  padding: 5px 15px 15px 15px;
   border: 1px solid #888;
   width: 70%;
 }
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: black;
   float: right;
   font-size: 50px;
   
