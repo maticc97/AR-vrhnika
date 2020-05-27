@@ -106,6 +106,23 @@ function rotateZ(){
   model.setAttribute('rotation', {x: a.x, y: a.y, z: a.z+5});
 }
 
+function zoomin(){
+   let model = document.getElementById("model");
+  let secModel = document.getElementById("secModel");
+
+  let a = this.model.getAttribute('scale');
+        this.model.setAttribute('scale',{x: a.x*1.1 ,y: a.y*1.1 ,z: a.z*1.1})
+}
+
+function zoomout(){
+   let model = document.getElementById("model");
+  let secModel = document.getElementById("secModel");
+
+  let a = this.model.getAttribute('scale');
+        this.model.setAttribute('scale',{x: a.x*0.9 ,y: a.y*0.9 ,z: a.z*0.9})
+}
+
+
 AFRAME.registerComponent('drag-rotate-component',{
       schema : { speed : {default:1}},
       init : function(){
