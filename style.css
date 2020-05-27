@@ -99,7 +99,7 @@ img{
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 3; /* Sit on top */
-  padding-top: 250px; /* Location of the box */
+  padding-top: 20px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
