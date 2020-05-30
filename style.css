@@ -95,7 +95,7 @@ body{
 .zoom_btn {
     z-index: 1;
     position: absolute;
-    top: 50%;
+    top: 30%;
     margin: 25px;
     right: 5%;
     border-radius: 50%;
@@ -108,7 +108,7 @@ body{
 .unzoom_btn {
     z-index: 1;
     position: absolute;
-    top: 30%;
+    top: 10%;
     right: 5%;
     margin: 25px;
     border-radius: 50%;
