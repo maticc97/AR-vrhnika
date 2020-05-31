@@ -169,6 +169,14 @@ AFRAME.registerComponent('drag-rotate-component',{
         document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this));
       },
       OnDocumentMouseDown : function(event){
+	var xmlhttp = new XMLHttpRequest();
+        const data = {
+          clicked: "Rotating model",
+          date: new Date().toLocaleString()
+        }
+        xmlhttp.open("POST", Url);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify(data));
         this.ifMouseDown = true;
         this.x_cord = event.touches[0].pageX;
         this.y_cord = event.touches[0].pageY;
@@ -182,15 +190,6 @@ AFRAME.registerComponent('drag-rotate-component',{
       {
         if(this.ifMouseDown)
         {
-          
-          var xmlhttp = new XMLHttpRequest();
-          const data = {
-            clicked: "Rotating model",
-            date: new Date().toLocaleString()
-          }
-          xmlhttp.open("POST", Url);
-          xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-          xmlhttp.send(JSON.stringify(data));
     
           var temp_x = event.touches[0].pageX-this.x_cord;
           var temp_y = event.touches[0].pageY-this.y_cord;
