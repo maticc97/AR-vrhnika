@@ -184,7 +184,7 @@ AFRAME.registerComponent('drag-rotate-component',{
       {
         if(this.ifMouseDown)
         {
-	  /*if (!this.requestSent) {
+	  if (!this.requestSent) {
 	  	var xmlhttp = new XMLHttpRequest();
 		const data = {
 		  clicked: "Rotating model",
@@ -194,7 +194,7 @@ AFRAME.registerComponent('drag-rotate-component',{
 		xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		xmlhttp.send(JSON.stringify(data));
 		this.requestSent = true;
-	  }*/
+	  }
     
           var temp_x = event.touches[0].pageX-this.x_cord;
           var temp_y = event.touches[0].pageY-this.y_cord;
