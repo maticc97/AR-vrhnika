@@ -49,7 +49,7 @@ function closeInstructions() {
 function openNav() {
   var xmlhttp = new XMLHttpRequest();
   const data = {
-    clicked: "Info",
+    clicked: "Info opened",
     date: new Date().toLocaleString()
   }
   xmlhttp.open("POST", Url);
@@ -57,15 +57,30 @@ function openNav() {
   xmlhttp.send(JSON.stringify(data));
   document.getElementById("overlay").style.display = "block";
 }
-function openNav() {
-  document.getElementById("overlay").style.display = "block";
-}
 
 function closeNav() {
+    var xmlhttp = new XMLHttpRequest();
+	  const data = {
+		  clicked: "Info closed",
+		  date: new Date().toLocaleString()
+	  }
+	  xmlhttp.open("POST", Url);
+	  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	  xmlhttp.send(JSON.stringify(data));
     document.getElementById("overlay").style.display = "none";
 }
 
 function startAnimation() {
+  
+  var xmlhttp = new XMLHttpRequest();
+	const data = {
+		clicked: "Play animation",
+		date: new Date().toLocaleString()
+	}
+	xmlhttp.open("POST", Url);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(data));
+  
   let model = document.getElementById("model");
   let secModel = document.getElementById("secModel");
   if (this.model) {
@@ -107,6 +122,16 @@ function rotateZ(){
 }
 
 function zoomin(){
+  
+  var xmlhttp = new XMLHttpRequest();
+	const data = {
+		clicked: "Zoom in",
+		date: new Date().toLocaleString()
+	}
+	xmlhttp.open("POST", Url);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(data));
+  
    let model = document.getElementById("model");
   let secModel = document.getElementById("secModel");
 
@@ -115,6 +140,16 @@ function zoomin(){
 }
 
 function zoomout(){
+  
+  var xmlhttp = new XMLHttpRequest();
+	const data = {
+		clicked: "Zoom out",
+		date: new Date().toLocaleString()
+	}
+	xmlhttp.open("POST", Url);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(data));
+  
    let model = document.getElementById("model");
   let secModel = document.getElementById("secModel");
 
@@ -147,6 +182,15 @@ AFRAME.registerComponent('drag-rotate-component',{
       {
         if(this.ifMouseDown)
         {
+          
+          var xmlhttp = new XMLHttpRequest();
+          const data = {
+            clicked: "Rotating model",
+            date: new Date().toLocaleString()
+          }
+          xmlhttp.open("POST", Url);
+          xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          xmlhttp.send(JSON.stringify(data));
     
           var temp_x = event.touches[0].pageX-this.x_cord;
           var temp_y = event.touches[0].pageY-this.y_cord;
